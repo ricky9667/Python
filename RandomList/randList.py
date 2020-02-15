@@ -1,12 +1,11 @@
 import random
 import pandas as pd
 
-def get_bingo(max):
+def get_bingo():
     num_chosen = [0]*50
     num_list = []
-    min = 1
     while len(num_list) < 25:
-        rand_num = random.randint(min, max)
+        rand_num = random.randint(1, 40)
         if num_chosen[rand_num] == 0:
             num_list.append(str(rand_num))
             num_chosen[rand_num] = 1
@@ -15,7 +14,7 @@ def get_bingo(max):
 def get_comp_list(n):
     competitors = [[]]
     max = int(input("Input max number: "))
-    competitors[0] = get_bingo(max)
+    competitors[0] = get_bingo()
     for i in range(1, n):
         competitors.append(get_bingo())
     return competitors
