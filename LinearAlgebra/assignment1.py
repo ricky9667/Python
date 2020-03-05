@@ -36,7 +36,24 @@ def matrix_transpose(matrix_input):
     return matrix_output
 
 def matrix_mutiply(matrix_x, matrix_y):
-    print()
+    rows_x = len(matrix_x)
+    cols_x = len(matrix_x[0])
+    rows_y = len(matrix_y)
+    cols_y = len(matrix_y[0])
+    if not cols_x == rows_y:
+        return None
+    
+    rows_mul, cols_mul, mul_len = rows_x, cols_y, cols_x
+    matrix_mul = []
+    for i in range(rows_mul):
+        row = []
+        for j in range(cols_mul):
+            element = 0
+            for p in range(mul_len):
+                element += matrix_x[i][p] * matrix_y[p][j]
+            row.append(element)
+        matrix_mul.append(row)
+    return matrix_mul
 
 def problem_a():
     global matrix_a, matrix_b, matrix_c, matrix_e
@@ -52,12 +69,15 @@ def problem_a():
     print("\n=============================\n")
 
 def problem_b():
-    global matrix_a, matrix_b
-
+    global matrix_a, matrix_c
+    print("\n========= Problem B =========\n")
+    print("F = A * C =", matrix_mutiply(matrix_a, matrix_c))
+    print("F = C * A =", matrix_mutiply(matrix_c, matrix_a))
+    print("\n=============================\n")
 
 def main():
     problem_a()
-
+    problem_b()
 
 if __name__ == "__main__":
     main()
