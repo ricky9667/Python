@@ -16,11 +16,13 @@ def matrix_add(matrix_x, pow_x, matrix_y, pow_y):
     if not cols_x == cols_y:
         return None
 
-    matrix_sum = [[0]*cols_x]*rows_x
+    matrix_sum = []
     for i in range(len(matrix_x)):
+        temp = []
         for j in range(len(matrix_x[0])):
-            matrix_sum[i][j] = matrix_x[i][j]*pow_x + matrix_y[i][j]*pow_y
-    return matrix_x
+            temp.append(matrix_x[i][j]*pow_x + matrix_y[i][j]*pow_y)
+        matrix_sum.append(temp)
+    return matrix_sum
 
 def matrix_mutiply(matrix_x, matrix_y):
     print("Not implemented")
@@ -34,7 +36,6 @@ def matrix_transpose(matrix_input):
         for j in range(rows):
             temp.append(matrix_input[j][i])
         matrix_output.append(temp)
-
     return matrix_output
 
 def problem_a():
@@ -47,7 +48,7 @@ def problem_a():
     print("C - E =", a2)
 
     print("A ^ T =", matrix_transpose(matrix_a))
-
+    print("E ^ T =", matrix_transpose(matrix_e))
 
 def main():
     problem_a()
