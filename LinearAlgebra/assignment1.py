@@ -28,16 +28,13 @@ def matrix_mutiply(matrix_x, matrix_y):
 def matrix_transpose(matrix_input):
     rows = len(matrix_input)
     cols = len(matrix_input[0])
-    matrix_output = [[0]*rows]*cols
+    matrix_output = []
     for i in range(cols):
+        temp = []
         for j in range(rows):
-            # print("i =", i, ", j =", j)
-            matrix_output[i][j] = matrix_input[j][i]
-            # print("matrix_output =", matrix_output)
-            # print(matrix_output[0][0] is matrix_output[0][1])
-            # print("matrix_input =", matrix_input[j][i])
-            # print("matrix_output =", matrix_output[i][j])
-    
+            temp.append(matrix_input[j][i])
+        matrix_output.append(temp)
+
     return matrix_output
 
 def problem_a():
