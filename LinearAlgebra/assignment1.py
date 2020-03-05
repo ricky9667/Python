@@ -24,9 +24,6 @@ def matrix_add(matrix_x, pow_x, matrix_y, pow_y):
         matrix_sum.append(temp)
     return matrix_sum
 
-def matrix_mutiply(matrix_x, matrix_y):
-    print("Not implemented")
-
 def matrix_transpose(matrix_input):
     rows = len(matrix_input)
     cols = len(matrix_input[0])
@@ -38,20 +35,29 @@ def matrix_transpose(matrix_input):
         matrix_output.append(temp)
     return matrix_output
 
+def matrix_mutiply(matrix_x, matrix_y):
+    print()
+
 def problem_a():
     global matrix_a, matrix_b, matrix_c, matrix_e
-    
+    print("\n========= Problem A =========\n")
+
     a1 = matrix_add(matrix_a, 1, matrix_b, 2)
     print("A + 2B =", a1)
-
     a2 = matrix_add(matrix_c, 1, matrix_e, -1)
     print("C - E =", a2)
-
     print("A ^ T =", matrix_transpose(matrix_a))
     print("E ^ T =", matrix_transpose(matrix_e))
+    
+    print("\n=============================\n")
+
+def problem_b():
+    global matrix_a, matrix_b
+
 
 def main():
     problem_a()
+
 
 if __name__ == "__main__":
     main()
