@@ -8,6 +8,11 @@ matrix_f = []
 matrix_g = []
 matrix_i = [[1, 0], [0, 1]]
 
+def print_matrix(matrix):
+    for row in matrix:
+        print(row)
+    print()
+
 def matrix_add(matrix_x, pow_x, matrix_y, pow_y):
     rows_x = len(matrix_x)
     rows_y = len(matrix_y)
@@ -68,24 +73,44 @@ def problem_a():
     print("\n========= Problem A =========\n")
 
     a1 = matrix_add(matrix_a, 1, matrix_b, 2)
-    print("A + 2B =", a1)
+    print("A + 2B =")
+    print_matrix(a1)
+
     a2 = matrix_add(matrix_c, 1, matrix_e, -1)
-    print("C - E =", a2)
-    print("A ^ T =", matrix_transpose(matrix_a))
-    print("E ^ T =", matrix_transpose(matrix_e))
+    print("C - E =")
+    print_matrix(a2)
+
+    a3 = matrix_transpose(matrix_a)
+    print("A ^ T =")
+    print_matrix(a3)
+
+    a4 = matrix_transpose(matrix_e)
+    print("E ^ T =")
+    print_matrix(a4)
 
 def problem_b():
     global matrix_a, matrix_c, matrix_f
     print("\n========= Problem B =========\n")
+
     matrix_f = matrix_mutiply(matrix_a, matrix_c)
-    print("F = A * C =", matrix_f)
+    print("F = A * C =")
+    print_matrix(matrix_f)
+
     matrix_g = matrix_mutiply(matrix_c, matrix_a)
-    print("G = C * A =", matrix_g)
+    print("G = C * A =")
+    print_matrix(matrix_g)
 
 def problem_c():
     global matrix_f
     print("\n========= Problem C =========\n")
-    print("F ^ (-1) =", matrix_inverse(matrix_f))
+
+    c1 =  matrix_inverse(matrix_f)
+    print("F ^ (-1) =")
+    print_matrix(c1)
+
+    c2 = matrix_mutiply(matrix_f, matrix_inverse(matrix_f))
+    print("F * F ^ (-1) =")
+    print_matrix(c2)
 
 def main():
     problem_a()
