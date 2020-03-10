@@ -3,7 +3,7 @@
 
 ### Functions
 
-- print_matrix(matrix)
+- `print_matrix(matrix)`
     - prints out formatted matrix list
     - returns `"Matrix undefined"` if `matrix == None`
 
@@ -16,7 +16,7 @@ print_matrix(matrix)
 [2, 3]
 ```
 
-- matrix_add(x, timeys_x, y, times_y):
+- `matrix_add(x, timeys_x, y, times_y):`
     - adds 2 matrices with same size
     - returns `None` when addition unavailable (different sizes, etc.)
 
@@ -37,8 +37,54 @@ print_matrix(add)
 
 # result 
 "Matrix undefined" # add == None
-
 ```
+
+- `matrix_transpose(matrix)`
+    - transposes a matrix
+
+```python
+x = [[1, 0], [4, 3], [7, 2]]
+print_matrix(x)
+
+# result
+[1, 0]
+[4, 3]
+[7, 2]
+
+tx = matrix_transpose(x)
+print_matrix(tx)
+
+# result
+[1, 4, 7]
+[0, 3, 2]
+```
+
+- `matrix_mutiply(matrix_x, matrix_y)`
+    - multiplies 2 matrices
+    - returns `None` if sizes are not compatible
+
+```python
+x = [[-1, 2, 0], [2, 0, 3]]
+y = [[0, 2], [1, 0], [-1, 1]]
+mul = matrix_multiply(x, y)
+print_matrix(mul)
+
+# result
+[2, -2]
+[-3, 7]
+
+x = [[-1, 2, 0], [2, 0, 3]]
+y = [[0, 2], [1, 0]]
+mul = matrix_multiply(x, y)
+print_matrix(mul)
+
+# result
+"Matrix undefined"
+```
+
+- 
+
+
 
 
 
