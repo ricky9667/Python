@@ -66,7 +66,9 @@ def matrix_mutiply(matrix_x, matrix_y):
 
 def matrix_inverse(matrix):
     p = matrix[0][0]*matrix[1][1] - matrix[0][1]*matrix[1][0]
-    print(p)
+    if p == 0:
+        return None
+
     output = [[matrix[1][1]/p, -matrix[0][1]/p], [-matrix[1][0]/p, matrix[0][0]/p]]
     return output
 

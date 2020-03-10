@@ -16,7 +16,7 @@ print_matrix(matrix)
 [2, 3]
 ```
 
-- `matrix_add(x, timeys_x, y, times_y):`
+- `matrix_add(x, times_x, y, times_y):`
     - adds 2 matrices with same size
     - returns `None` when addition unavailable (different sizes, etc.)
 
@@ -82,10 +82,24 @@ print_matrix(mul)
 "Matrix undefined"
 ```
 
-- 
+- `matrix_inverse(matrix)`
+    - supports only **2 dimensional** matrices
+    - calculates the inverse of a matrix
+    - returns `None` if matrix is unable to convert (`ad - bc == 0`)
 
+```python
+x = [[2, -2], [-3, 7]]
+ix = matrix_inverse(x)
+print_matrix(ix)
 
+# result
+[0.875, 0.25]
+[0.375, 0.25]
 
+x = [[1, 3], [2, 6]]
+ix = matrix_inverse(x)
+print_matrix(ix)
 
-
-
+# result 
+"Matrix undefined"
+```
