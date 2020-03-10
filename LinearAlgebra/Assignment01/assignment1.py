@@ -9,11 +9,13 @@ matrix_g = []
 matrix_i = [[1, 0], [0, 1]]
 
 def print_matrix(matrix):
+    if matrix == None:
+        print("Matrix undefined")
     for row in matrix:
         print(row)
     print()
 
-def matrix_add(matrix_x, pow_x, matrix_y, pow_y):
+def matrix_add(matrix_x, times_x, matrix_y, times_y):
     rows_x = len(matrix_x)
     rows_y = len(matrix_y)
     if not rows_x == rows_y:
@@ -27,7 +29,7 @@ def matrix_add(matrix_x, pow_x, matrix_y, pow_y):
     for i in range(len(matrix_x)):
         temp = []
         for j in range(len(matrix_x[0])):
-            temp.append(matrix_x[i][j]*pow_x + matrix_y[i][j]*pow_y)
+            temp.append(matrix_x[i][j]*times_x + matrix_y[i][j]*times_y)
         matrix_sum.append(temp)
     return matrix_sum
 
