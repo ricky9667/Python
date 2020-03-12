@@ -1,4 +1,4 @@
-# Linear Algebra Assignment 
+## Linear Algebra Assignment 
 ### By 108820008 電資一 胡紹宇
 
 ### Functions
